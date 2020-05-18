@@ -7,12 +7,19 @@
   background-color: var(--ButtonFace);
   color: var(--WindowText);
   border-color: var(--ActiveBorder);
-  font-size: 10px;
-  box-shadow: -0.5px -0.5px 0px 0.5px var(--ButtonHilight), 0px 0px 0px 1px var(--ButtonShadow), -0.5px -0.5px 0px 1.5px var(--ButtonLight), 0px 0px 0px 2px var(--ButtonDkShadow); }
+  font-size: 11px;
+  box-shadow: -1px -1px 0 0px var(--ButtonHilight),
+		-1px 0px 0 0px var(--ButtonHilight),
+		0px -1px 0 0px var(--ButtonHilight),
+		0 0 0 1px var(--ButtonShadow),
+		-1px -1px 0 1px var(--ButtonLight),
+		-1px 0px 0 1px var(--ButtonLight),
+		0px -1px 0 1px var(--ButtonLight),
+		0 0 0 2px var(--ButtonDkShadow); }
 
 .menubar {
   background-color: var(--Menu);
-  font-size: 10px; }
+  font-size: 11px; }
 
 .disabled {
   color: var(--GrayText); }
@@ -22,7 +29,7 @@
   color: var(--HilightText); }
 
 .titlebar .titlebar-title {
-  font-size: 10px;
+  font-size: 11px;
   height: 18px;
   line-height: 18px;
   font-weight: bold; }
@@ -30,11 +37,31 @@
 .button {
   background-color: var(--ButtonFace);
   color: var(--ButtonText);
-  box-shadow: -0.5px -0.5px 0px 0.5px var(--ButtonLight), 0px 0px 0px 1px var(--ButtonShadow), -0.5px -0.5px 0px 1.5px var(--ButtonHilight), 0px 0px 0px 2px var(--ButtonDkShadow); }
+  box-shadow: -1px -1px 0px 0px var(--ButtonDkShadow) inset,
+		1px 1px 0px 0px var(--ButtonHilight) inset,
+		-2px -2px 0px 0px var(--ButtonShadow) inset
+		,2px 2px 0px 0px var(--ButtonLight) inset; }
   .button:active {
-    box-shadow: -0.5px -0.5px 0px 0.5px var(--ButtonShadow), 0px 0px 0px 1px var(--ButtonShadow), -0.5px -0.5px 0px 1.5px var(--WindowFrame), 0px 0px 0px 2px var(--WindowFrame); }
+    box-shadow: -1px -1px 0px 0px var(--WindowFrame) inset,
+		1px 1px 0px 0px var(--WindowFrame) inset,
+		-2px -2px 0px 0px var(--ButtonShadow) inset
+		,2px 2px 0px 0px var(--ButtonShadow) inset; }
   .button svg path {
     fill: var(--ButtonText); }
+
+.window-content .button.ok {
+	box-shadow: -1px -1px 0px 0px var(--ButtonDkShadow) inset,
+		1px 1px 0px 0px var(--ButtonHilight) inset,
+		-2px -2px 0px 0px var(--ButtonShadow) inset
+		,2px 2px 0px 0px var(--ButtonLight) inset;
+}
+
+.window-content .button.ok:active {
+	box-shadow: -1px -1px 0px 0px var(--WindowFrame) inset,
+		1px 1px 0px 0px var(--WindowFrame) inset,
+		-2px -2px 0px 0px var(--ButtonShadow) inset
+		,2px 2px 0px 0px var(--ButtonShadow) inset;
+}
 
 .titlebar .button:active {
   box-shadow: -0.5px -0.5px 0px 0.5px var(--ButtonShadow), 0px 0px 0px 1px var(--ButtonLight), -0.5px -0.5px 0px 1.5px var(--ButtonDkShadow), 0px 0px 0px 2px var(--ButtonHilight); }
@@ -91,15 +118,31 @@
 
 /* Scrollbar */
 .scrollbar {
-  background-color: var(--Scrollbar); }
-  .scrollbar.verti-scroll {
-    width: 16px; }
-  .scrollbar.horiz-scroll {
-    height: 16px; }
-  .scrollbar .button {
-    box-shadow: -0.5px -0.5px 0px 0.5px var(--ButtonHilight), 0px 0px 0px 1px var(--ButtonShadow), -0.5px -0.5px 0px 1.5px var(--ButtonLight), 0px 0px 0px 2px var(--ButtonDkShadow);
-    /* sic */ }
-    .scrollbar .button:active {
-      box-shadow: -0.5px -0.5px 0px 0.5px var(--ButtonDkShadow), 0px 0px 0px 1px var(--ButtonLight), -0.5px -0.5px 0px 1.5px var(--ButtonShadow), 0px 0px 0px 2px var(--ButtonHilight); }
+	background-color: var(--Scrollbar); }
+.scrollbar.verti-scroll {
+	width: 16px; }
+.scrollbar.horiz-scroll {
+	height: 16px; }
+.scrollbar .button {
+	box-shadow: -1px -1px 0px 0px var(--ButtonDkShadow) inset,
+		1px 1px 0px 0px var(--ButtonLight) inset,
+		-2px -2px 0px 0px var(--ButtonShadow) inset,
+		2px 2px 0px 0px var(--ButtonHilight) inset; }
+/* sic */ }
+.scrollbar .button:active {
+	box-shadow: -1px -1px 0px 0px var(--WindowFrame) inset,
+		1px 1px 0px 0px var(--WindowFrame) inset,
+		-2px -2px 0px 0px var(--ButtonShadow) inset,
+		2px 2px 0px 0px var(--ButtonShadow) inset; }
 
 /*# sourceMappingURL=theme-template.css.map */
+
+
+
+
+
+/* The Windows 10 preview is still a work in progress */
+.desktop10 {
+  background-color: var(--Background);
+  font-family: "Segoe UI", sans-serif; }
+

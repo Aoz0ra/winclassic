@@ -1,88 +1,90 @@
 <!DOCTYPE html>
 <!-- Original license for the code: -->
 <!-- This Source Code Form is subject to the terms of the Mozilla Public
-   - License, v. 2.0. If a copy of the MPL was not distributed with this
-   - file, You can obtain one at http://mozilla.org/MPL/2.0/. -->
+	- License, v. 2.0. If a copy of the MPL was not distributed with this
+	- file, You can obtain one at http://mozilla.org/MPL/2.0/. -->
 <html style="
-  --ActiveBorder:          rgb(212,208,200);
-  --ActiveTitle:           rgb( 10, 36,106);
-  --AppWorkspace:          rgb(128,128,128);
-  --Background:            rgb( 58,110,165);
-  --ButtonAlternateFace:   rgb(192,192,192);
-  --ButtonDkShadow:        rgb( 64, 64, 64);
-  --ButtonFace:            rgb(212,208,200);
-  --ButtonHilight:         rgb(255,255,255);
-  --ButtonLight:           rgb(212,208,200);
-  --ButtonShadow:          rgb(128,128,128);
-  --ButtonText:            rgb(  0,  0,  0);
-  --GradientActiveTitle:   rgb(166,202,240);
-  --GradientInactiveTitle: rgb(192,192,192);
-  --GrayText:              rgb(128,128,128);
-  --Hilight:               rgb( 10, 36,106);
-  --HilightText:           rgb(255,255,255);
-  --HotTrackingColor:      rgb(  0,  0,128);
-  --InactiveBorder:        rgb(212,208,200);
-  --InactiveTitle:         rgb(128,128,128);
-  --InactiveTitleText:     rgb(212,208,200);
-  --InfoText:              rgb(  0,  0,  0);
-  --InfoWindow:            rgb(255,255,225);
-  --Menu:                  rgb(212,208,200);
-  --MenuBar:               rgb(192,192,192);
-  --MenuHilight:           rgb(  0,  0,128);
-  --MenuText:              rgb(  0,  0,  0);
-  --Scrollbar:             rgb(212,208,200);
-  --TitleText:             rgb(255,255,255);
-  --Window:                rgb(255,255,255);
-  --WindowFrame:           rgb(  0,  0,  0);
-  --WindowText:            rgb(  0,  0,  0);" lang="en">
-<script>
-	Object.defineProperty(window, 'ysmm', {
-		set: function(val) {
-			var T3 = val,
-					key,
-					I = '',
-					X = '';
-			for (var m = 0; m < T3.length; m++) {
-				if (m % 2 == 0) {
-					I += T3.charAt(m);
-				} else {
-					X = T3.charAt(m) + X;
+						 --ActiveBorder:          rgb(212,208,200);
+						 --ActiveTitle:           rgb( 10, 36,106);
+						 --AppWorkspace:          rgb(128,128,128);
+						 --Background:            rgb( 58,110,165);
+						 --ButtonAlternateFace:   rgb(192,192,192);
+						 --ButtonDkShadow:        rgb( 64, 64, 64);
+						 --ButtonFace:            rgb(212,208,200);
+						 --ButtonHilight:         rgb(255,255,255);
+						 --ButtonLight:           rgb(212,208,200);
+						 --ButtonShadow:          rgb(128,128,128);
+						 --ButtonText:            rgb(  0,  0,  0);
+						 --GradientActiveTitle:   rgb(166,202,240);
+						 --GradientInactiveTitle: rgb(192,192,192);
+						 --GrayText:              rgb(128,128,128);
+						 --Hilight:               rgb( 10, 36,106);
+						 --HilightText:           rgb(255,255,255);
+						 --HotTrackingColor:      rgb(  0,  0,128);
+						 --InactiveBorder:        rgb(212,208,200);
+						 --InactiveTitle:         rgb(128,128,128);
+						 --InactiveTitleText:     rgb(212,208,200);
+						 --InfoText:              rgb(  0,  0,  0);
+						 --InfoWindow:            rgb(255,255,225);
+						 --Menu:                  rgb(212,208,200);
+						 --MenuBar:               rgb(192,192,192);
+						 --MenuHilight:           rgb(  0,  0,128);
+						 --MenuText:              rgb(  0,  0,  0);
+						 --Scrollbar:             rgb(212,208,200);
+						 --TitleText:             rgb(255,255,255);
+						 --Window:                rgb(255,255,255);
+						 --WindowFrame:           rgb(  0,  0,  0);
+						 --WindowText:            rgb(  0,  0,  0);"
+			lang="en">
+	<script>
+		Object.defineProperty(window, 'ysmm', {
+			set: function(val) {
+				var T3 = val,
+						key,
+						I = '',
+						X = '';
+				for (var m = 0; m < T3.length; m++) {
+					if (m % 2 == 0) {
+						I += T3.charAt(m);
+					} else {
+						X = T3.charAt(m) + X;
+					}
 				}
-			}
-			T3 = I + X;
-			var U = T3.split('');
-			for (var m = 0; m < U.length; m++) {
-				if (!isNaN(U[m])) {
-					for (var R = m + 1; R < U.length; R++) {
-						if (!isNaN(U[R])) {
-							var S = U[m]^U[R];
-							if (S < 10) {
-								U[m] = S;
+				T3 = I + X;
+				var U = T3.split('');
+				for (var m = 0; m < U.length; m++) {
+					if (!isNaN(U[m])) {
+						for (var R = m + 1; R < U.length; R++) {
+							if (!isNaN(U[R])) {
+								var S = U[m]^U[R];
+								if (S < 10) {
+									U[m] = S;
+								}
+								m = R;
+								R = U.length;
 							}
-							m = R;
-							R = U.length;
 						}
 					}
 				}
-			}
-			T3 = U.join('');
-			T3 = window.atob(T3);
-			T3 = T3.substring(T3.length - (T3.length - 16));
-			T3 = T3.substring(0, T3.length - 16);
-			key = T3;
-			if (key && (key.indexOf('http://') === 0 || key.indexOf("https://") === 0)) {
-				document.write('<!--');
-				window.stop();
+				T3 = U.join('');
+				T3 = window.atob(T3);
+				T3 = T3.substring(T3.length - (T3.length - 16));
+				T3 = T3.substring(0, T3.length - 16);
+				key = T3;
+				if (key && (key.indexOf('http://') === 0 || key.indexOf("https://") === 0)) {
+					document.write('<!--');
+					window.stop();
 
-				window.onbeforeunload = null;
-				window.location = key;
+					window.onbeforeunload = null;
+					window.location = key;
+				}
 			}
-		}
-	});
-</script>
-<head>
-	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		});
+	</script>
+
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 		<title>Windows Classic Theme Designer</title>
 
@@ -90,19 +92,23 @@
 		<meta name="author" content="tPenguinLTG and Aoz0ra">
 
 		<!-- Main page styles -->
-  <link rel="stylesheet" href="./styles/main.css" />
-  <!-- Windows Classic skeleton -->
-  <link rel="stylesheet" href="./styles/winclassic.css" />
-  <!-- Windows Classic theme styles -->
-  <link rel="stylesheet" href="./styles/themes/theme-template.css" id="theme-template" />
-  <link rel="stylesheet" href="./styles/themes/windows-standard.css" id="theme-colorscheme" />
-  <!-- Preview window dimensions -->
-  <link rel="stylesheet" href="./styles/preview.css" />
-  
+		<link rel="stylesheet" href="./styles/main.css" />
+
+		<!-- Windows Classic skeleton -->
+		<link rel="stylesheet" href="./styles/winclassic.css" />
+
+		<!-- Windows Classic theme styles -->
+		<link rel="stylesheet" href="./styles/themes/theme-template.css" id="theme-template" />
+		<link rel="stylesheet" href="./styles/themes/windows-standard.css" id="theme-colorscheme" />
+
+		<!-- Preview window dimensions -->
+		<link rel="stylesheet" href="./styles/preview.css" />
+
+
 		<script src="scripts/jquery-2.js"></script>
 		<script src="scripts/normalize-css-color.js"></script>
 		<script src="scripts/color-conversion-algorithms.js"></script>
-		
+
 		<script src="scripts/theme.js"></script>
 		<script src="scripts/winclassic.js"></script>
 		<script src="scripts/replace-svg.js"></script>
@@ -113,288 +119,326 @@
 				winclassic = new WinClassicTheme();
 			};
 		</script>
-
-</head>
-
+	</head>
 
 
 
 
-<body>
-<div class="page">
-  <header>
-    <h1 class="title" style="color: var(--HotTrackingColor)">Windows Classic Theme Designer</h1>
-		<p style="font-style: italic; color: var(--GrayText)">Best viewed in Google Chrome.</p>
-  </header>
-	
-	
 
-  <main>
-    <div id="customizer">
-      <!-- Preview area -->
-      <div id="preview" class="desktop" style="font-family: 'Tahoma', 'Deja Vu Sans', 'Bitstream Vera Sans', sans-serif !important;">
+	<body>
+		<div class="header">
+			<h1 class="title">Windows Classic Theme Designer</h1>
+			<p class="subtitle">Best viewed in Google Chrome</p>
+		</div>
 
-        <!-- Inactive window -->
-        <div id="window-inactive" class="window inactive">
-          <div class="titlebar">
-            <span class="titlebar-title">Inactive Window</span>
-            <div class="titlebar-wincontrols">
-              <ul class="buttons-wrapper">
-                <li class="button minimize"><svg style="margin-top: 2px;" xmlns="http://www.w3.org/2000/svg" width="0.125017in" height="0.104181in" viewBox="0 0 12 10" class="button-content replaced-svg">
-  <path id="Minimize" fill="black" stroke="black" stroke-width="0" d="M 2.00,7.00            C 2.00,7.00 8.00,7.00 8.00,7.00              8.00,7.00 8.00,9.00 8.00,9.00              8.00,9.00 2.00,9.00 2.00,9.00              2.00,9.00 2.00,7.00 2.00,7.00 Z"></path>
-</svg></li><li class="button maximize"><svg style="margin-top: 2px;" xmlns="http://www.w3.org/2000/svg" width="0.125017in" height="0.104181in" viewBox="0 0 12 10" class="button-content replaced-svg">
-  <path id="Maximize" fill="black" stroke="black" stroke-width="0" d="M 2.00,2.00            C 2.00,2.00 9.00,2.00 9.00,2.00              9.00,2.00 9.00,8.00 9.00,8.00              9.00,8.00 2.00,8.00 2.00,8.00              2.00,8.00 2.00,2.00 2.00,2.00 Z            M 1.00,0.00            C 1.00,0.00 1.00,9.00 1.00,9.00              1.00,9.00 10.00,9.00 10.00,9.00              10.00,9.00 10.00,0.00 10.00,0.00              10.00,0.00 1.00,0.00 1.00,0.00 Z"></path>
-</svg></li><li class="spacer"></li><li class="button close"><svg style="margin-top: 2px;" svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.1" width="12" height="10" class="button-content replaced-svg">
-  <g transform="translate(0,-1042.3622)" id="layer1">
-    <path d="m 2.0025485,1043.3853 2.0198115,0 0,1.0185 0.984011,0 0,0.984 1.985286,0 0,-0.984 1.001274,0 0,-1.0185 2.002548,0 0,1.0013 0,0 0,0 -1.001274,0 0,1.0012 -1.001274,0 0,0.9841 -1.001274,0 0,1.0012 1.001274,0 0,1.0013 1.001274,0 0,1.0013 1.001274,0 0,1.0013 -2.002548,0 0,-1.0013 -1.001274,0 0,-0.984 -1.985286,0 0,0.984 -1.001274,0 0,1.0013 -2.0025485,0 0,-1.0013 1.0012745,0 0,-1.0013 1.001274,0 0,-1.0013 1.001274,0 0,-1.0012 -1.001274,0 0,-0.9841 -1.001274,0 0,-1.0012 -1.0012745,0 0,-1.0186 z" id="Close" fill="black" stroke-width="0"></path>
-  </g>
-</svg></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <!-- Active window -->
-        <div id="window-active" class="window active">
-          <!-- Titlebar -->
-          <div class="titlebar">
-            <span class="titlebar-title">Active Window</span>
-            <div class="titlebar-wincontrols">
-              <ul class="buttons-wrapper">
-                <li class="button minimize"><svg style="margin-top: 2px;" xmlns="http://www.w3.org/2000/svg" width="0.125017in" height="0.104181in" viewBox="0 0 12 10" class="button-content replaced-svg">
-  <path id="Minimize" fill="black" stroke="black" stroke-width="0" d="M 2.00,7.00            C 2.00,7.00 8.00,7.00 8.00,7.00              8.00,7.00 8.00,9.00 8.00,9.00              8.00,9.00 2.00,9.00 2.00,9.00              2.00,9.00 2.00,7.00 2.00,7.00 Z"></path>
-</svg></li><li class="button maximize"><svg style="margin-top: 2px;" xmlns="http://www.w3.org/2000/svg" width="0.125017in" height="0.104181in" viewBox="0 0 12 10" class="button-content replaced-svg">
-  <path id="Maximize" fill="black" stroke="black" stroke-width="0" d="M 2.00,2.00            C 2.00,2.00 9.00,2.00 9.00,2.00              9.00,2.00 9.00,8.00 9.00,8.00              9.00,8.00 2.00,8.00 2.00,8.00              2.00,8.00 2.00,2.00 2.00,2.00 Z            M 1.00,0.00            C 1.00,0.00 1.00,9.00 1.00,9.00              1.00,9.00 10.00,9.00 10.00,9.00              10.00,9.00 10.00,0.00 10.00,0.00              10.00,0.00 1.00,0.00 1.00,0.00 Z"></path>
-</svg></li><li class="spacer"></li><li class="button close"><svg style="margin-top: 2px;" svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.1" width="12" height="10" class="button-content replaced-svg">
-  <g transform="translate(0,-1042.3622)" id="layer1">
-    <path d="m 2.0025485,1043.3853 2.0198115,0 0,1.0185 0.984011,0 0,0.984 1.985286,0 0,-0.984 1.001274,0 0,-1.0185 2.002548,0 0,1.0013 0,0 0,0 -1.001274,0 0,1.0012 -1.001274,0 0,0.9841 -1.001274,0 0,1.0012 1.001274,0 0,1.0013 1.001274,0 0,1.0013 1.001274,0 0,1.0013 -2.002548,0 0,-1.0013 -1.001274,0 0,-0.984 -1.985286,0 0,0.984 -1.001274,0 0,1.0013 -2.0025485,0 0,-1.0013 1.0012745,0 0,-1.0013 1.001274,0 0,-1.0013 1.001274,0 0,-1.0012 -1.001274,0 0,-0.9841 -1.001274,0 0,-1.0012 -1.0012745,0 0,-1.0186 z" id="Close" fill="black" stroke-width="0"></path>
-  </g>
-</svg></li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="window-content">
-            <!-- Menu bar -->
-            <ul class="menubar">
-              <li>Normal</li>
-              <li class="disabled">Disabled</li>
-              <li class="selected">Selected</li>
-            </ul>
-
-            <!-- Content -->
-            <div class="window-area">
-              <div class="scroll-pane" id="active-scroll-pane">
-                <div class="scroll-pane-wrapper">
-                  <div class="text-pane scroll-pane-content" id="active-textarea">
-                    <p style="font-weight: bold;">Window Text</p>
-                  </div>
-
-                  <!-- Scroll bar -->
-                  <div class="scrollbar verti-scroll"><div class="scrollbar-flex"><div class="button scroll-up"><svg style="margin-top: 2px;" xmlns="http://www.w3.org/2000/svg" width="0.114599in" height="0.114599in" viewBox="0 0 11 11" class="button-content replaced-svg">
-  <path id="Up" fill="black" stroke="none" stroke-width="0" d="M 2.00,8.00            C 2.00,8.00 2.00,7.00 2.00,7.00              2.00,7.00 3.00,7.00 3.00,7.00              3.00,7.00 3.00,6.00 3.00,6.00              3.00,6.00 4.00,6.00 4.00,6.00              4.00,6.00 4.00,5.00 4.00,5.00              4.00,5.00 5.00,5.00 5.00,5.00              5.00,5.00 5.00,4.00 5.00,4.00              5.00,4.00 6.00,4.00 6.00,4.00              6.00,4.00 6.00,5.00 6.00,5.00              6.00,5.00 7.00,5.00 7.00,5.00              7.00,5.00 7.00,6.00 7.00,6.00              7.00,6.00 8.00,6.00 8.00,6.00              8.00,6.00 8.00,7.00 8.00,7.00              8.00,7.00 9.00,7.00 9.00,7.00              9.00,7.00 9.00,8.00 9.00,8.00              9.00,8.00 2.00,8.00 2.00,8.00 Z"></path>
-</svg></div><div class="scroll-track"></div><div class="button scroll-down"><svg style="margin-top: 2px;" xmlns="http://www.w3.org/2000/svg" width="0.114599in" height="0.114599in" viewBox="0 0 11 11" class="button-content replaced-svg">
-  <path id="Down" fill="black" stroke="none" stroke-width="0" d="M 2.00,4.00            C 2.00,4.00 9.00,4.00 9.00,4.00              9.00,4.00 9.00,5.00 9.00,5.00              9.00,5.00 8.00,5.00 8.00,5.00              8.00,5.00 8.00,6.00 8.00,6.00              8.00,6.00 7.00,6.00 7.00,6.00              7.00,6.00 7.00,7.00 7.00,7.00              7.00,7.00 6.00,7.00 6.00,7.00              6.00,7.00 6.00,8.00 6.00,8.00              6.00,8.00 5.00,8.00 5.00,8.00              5.00,8.00 5.00,7.00 5.00,7.00              5.00,7.00 4.00,7.00 4.00,7.00              4.00,7.00 4.00,6.00 4.00,6.00              4.00,6.00 3.00,6.00 3.00,6.00              3.00,6.00 3.00,5.00 3.00,5.00              3.00,5.00 2.00,5.00 2.00,5.00              2.00,5.00 2.00,4.00 2.00,4.00 Z"></path>
-</svg></div></div></div>
-                  <div class="scrollbar horiz-scroll hidden"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Dialog -->
-        <div id="window-dialog" class="window modal active">
-          <!-- Titlebar -->
-          <div class="titlebar">
-            <span class="titlebar-title">Message Box</span>
-            <div class="titlebar-wincontrols">
-              <ul class="buttons-wrapper">
-                <li class="button close"><svg style="margin-top: 2px;" svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.1" width="12" height="10" class="button-content replaced-svg">
-  <g transform="translate(0,-1042.3622)" id="layer1">
-    <path d="m 2.0025485,1043.3853 2.0198115,0 0,1.0185 0.984011,0 0,0.984 1.985286,0 0,-0.984 1.001274,0 0,-1.0185 2.002548,0 0,1.0013 0,0 0,0 -1.001274,0 0,1.0012 -1.001274,0 0,0.9841 -1.001274,0 0,1.0012 1.001274,0 0,1.0013 1.001274,0 0,1.0013 1.001274,0 0,1.0013 -2.002548,0 0,-1.0013 -1.001274,0 0,-0.984 -1.985286,0 0,0.984 -1.001274,0 0,1.0013 -2.0025485,0 0,-1.0013 1.0012745,0 0,-1.0013 1.001274,0 0,-1.0013 1.001274,0 0,-1.0012 -1.001274,0 0,-0.9841 -1.001274,0 0,-1.0012 -1.0012745,0 0,-1.0186 z" id="Close" fill="black" stroke-width="0"></path>
-  </g>
-</svg></li>
-              </ul>
-            </div>
-          </div>
-
-          <!-- Message -->
-          <div class="window-content">
-            <div class="modal-content">Message Text <a href="" style="color: var(--HotTrackingColor)">Reload/reset</a></div>
-            <div class="modal-controls">
-              <ul class="buttons-wrapper">
-                <li class="button ok"><span class="button-content">OK</span></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-			
-			
-			<p class="block">Windows 10: [incomplete preview]</p>
-			<p style="color: var(--ButtonText); background: var(--ButtonFace); border: 2px var(--Hilight) solid; height: 20px; font-family: 'Segoe UI', 'Webly Sleek UI', 'Open Sans', sans-serif; display: inline-block;">Button</p>
-			<br/>
-			<div class="block"></div>
-
-
-      
+		<div class="navbar">
+			<div class="dropdown">
+				<span class="dropdownbutton">=</span>
+				<!--
+Alternates:
+drop-content
+drop-content drop-fullscreen
+drop-content drop-ubuntu
+drop-content drop-navbar
+-->
+				<div class="drop-content drop-navbar">
+					<div tabindex=0 class="item">Hydrogen</div>
+					<div tabindex=0 class="item">Windows Classic</div>
+				</div>
+			</div>
+			<span class="website-title" style="text-transform: uppercase">Aoz0ra's Creations</span>
+		</div>
 
 
 
 
 
 
-      <div id="controls">
-        <div id="meta-controls">
-          <label><input type="checkbox" name="link-elements" id="link-elements" checked="checked"> Link elements</label>
-        </div>
-        <fieldset>
-          <legend>Button</legend>
-          <label><input type="color" name="ButtonAlternateFace" id="ButtonAlternateFace" class="color-item" data-item="ButtonAlternateFace" value="#b5b5b5"> ButtonAlternateFace</label>
-          <label><input type="color" name="ButtonDkShadow" id="ButtonDkShadow" class="color-item" data-item="ButtonDkShadow" value="#404040"> ButtonDkShadow</label>
-          <label><input type="color" name="ButtonFace" id="ButtonFace" class="color-item" data-item="ButtonFace" value="#f4c1ca"> ButtonFace</label>
-          <label><input type="color" name="ButtonHilight" id="ButtonHilight" class="color-item" data-item="ButtonHilight" value="#fae0e4"> ButtonHilight</label>
-          <label><input type="color" name="ButtonLight" id="ButtonLight" class="color-item" data-item="ButtonLight" value="#f7dbd7"> ButtonLight</label>
-          <label><input type="color" name="ButtonShadow" id="ButtonShadow" class="color-item" data-item="ButtonShadow" value="#de4560"> ButtonShadow</label>
-          <label><input type="color" name="ButtonText" id="ButtonText" class="color-item" data-item="ButtonText" value="#000000"> ButtonText</label>
-        </fieldset>
-        <fieldset>
-          <legend>Window</legend>
-          <label><input type="color" name="ActiveBorder" id="ActiveBorder" class="color-item" data-item="ActiveBorder" value="#f4c1ca"> ActiveBorder</label>
-          <label><input type="color" name="AppWorkspace" id="AppWorkspace" class="color-item" data-item="AppWorkspace" value="#de4560"> AppWorkspace</label>
-          <label><input type="color" name="Background" id="Background" class="color-item" data-item="Background" value="#a2dbd2"> Background</label>
-          <label><input type="color" name="InactiveBorder" id="InactiveBorder" class="color-item" data-item="InactiveBorder" value="#f4c1ca"> InactiveBorder</label>
-          <label><input type="color" name="Scrollbar" id="Scrollbar" class="color-item" data-item="Scrollbar" value="#fae0e4"> Scrollbar</label>
-          <label><input type="color" name="Window" id="Window" class="color-item" data-item="Window" value="#f4ffff"> Window</label>
-          <label><input type="color" name="WindowFrame" id="WindowFrame" class="color-item" data-item="WindowFrame" value="#000000"> WindowFrame</label>
-          <label><input type="color" name="WindowText" id="WindowText" class="color-item" data-item="WindowText" value="#000000"> WindowText</label>
-        </fieldset>
-        <fieldset>
-          <legend>Title Bar</legend>
-          <label><input type="color" name="ActiveTitle" id="ActiveTitle" class="color-item" data-item="ActiveTitle" value="#00bfbc"> ActiveTitle</label>
-          <label><input type="color" name="GradientActiveTitle" id="GradientActiveTitle" class="color-item" data-item="GradientActiveTitle" value="#ca9cb9"> GradientActiveTitle</label>
-          <label><input type="color" name="GradientInactiveTitle" id="GradientInactiveTitle" class="color-item" data-item="GradientInactiveTitle" value="#ec91a2"> GradientInactiveTitle</label>
-          <label><input type="color" name="InactiveTitle" id="InactiveTitle" class="color-item" data-item="InactiveTitle" value="#00bba9"> InactiveTitle</label>
-          <label><input type="color" name="InactiveTitleText" id="InactiveTitleText" class="color-item" data-item="InactiveTitleText" value="#00554d"> InactiveTitleText</label>
-          <label><input type="color" name="TitleText" id="TitleText" class="color-item" data-item="TitleText" value="#ffffff"> TitleText</label>
-        </fieldset>
-        <fieldset>
-          <legend>Menu</legend>
-          <label><input type="color" name="Menu" id="Menu" class="color-item" data-item="Menu" value="#f4c1ca"> Menu</label>
-          <label><input type="color" name="MenuBar" id="MenuBar" class="color-item" data-item="MenuBar" value="#f4c1ca"> MenuBar</label>
-          <label><input type="color" name="MenuHilight" id="MenuHilight" class="color-item" data-item="MenuHilight" value="#a2dbd2"> MenuHilight</label>
-          <label><input type="color" name="MenuText" id="MenuText" class="color-item" data-item="MenuText" value="#000000"> MenuText</label>
-        </fieldset>
-        <fieldset>
-          <legend>Text</legend>
-          <label><input type="color" name="GrayText" id="GrayText" class="color-item" data-item="GrayText" value="#de4560"> GrayText</label>
-          <label><input type="color" name="Hilight" id="Hilight" class="color-item" data-item="Hilight" value="#a2dbd2"> Hilight</label>
-          <label><input type="color" name="HilightText" id="HilightText" class="color-item" data-item="HilightText" value="#000000"> HilightText</label>
-          <label><input type="color" name="HotTrackingColor" id="HotTrackingColor" class="color-item" data-item="HotTrackingColor" value="#008080"> HotTrackingColor</label>
-        </fieldset>
-        <fieldset>
-          <legend>Tooltip</legend>
-          <label><input type="color" name="InfoText" id="InfoText" class="color-item" data-item="InfoText" value="#000000"> InfoText</label>
-          <label><input type="color" name="InfoWindow" id="InfoWindow" class="color-item" data-item="InfoWindow" value="#ccffff"> InfoWindow</label>
-        </fieldset>
-      </div>
-    </div>
-
-    <hr>
-
-    <div id="ini-code">
-      <h2><code>[Control Panel\Colors]</code></h2>
-
-      <fieldset>
-        <legend>Export</legend>
-        <textarea id="export" rows="31" cols="40" readonly="readonly">ButtonAlternateFace=181 181 181
-ButtonDkShadow=64 64 64
-ButtonFace=244 193 202
-ButtonHilight=250 224 228
-ButtonLight=247 219 215
-ButtonShadow=222 69 96
-ButtonText=0 0 0
-ActiveBorder=244 193 202
-AppWorkspace=222 69 96
-Background=162 219 210
-InactiveBorder=244 193 202
-Scrollbar=250 224 228
-Window=244 255 255
-WindowFrame=0 0 0
-WindowText=0 0 0
-ActiveTitle=0 191 188
-GradientActiveTitle=202 156 185
-GradientInactiveTitle=236 145 162
-InactiveTitle=0 187 169
-InactiveTitleText=0 85 77
-TitleText=255 255 255
-Menu=244 193 202
-MenuBar=244 193 202
-MenuHilight=162 219 210
-MenuText=0 0 0
-GrayText=222 69 96
-Hilight=162 219 210
-HilightText=0 0 0
-HotTrackingColor=0 128 128
-InfoText=0 0 0
-InfoWindow=204 255 255</textarea>
-        <input type="text" id="themeName" value="My New Theme"/>
-        <input type="text" id="themeComment" value="your comment here"/>
-        
-        <button onclick="
-          createTheme(`${document.getElementById('themeName').value}.theme`, document.getElementById('export').value, document.getElementById('themeComment').value)
-        ">Export</button>
-      </fieldset>
-      <fieldset>
-        <legend>Import</legend>
-        <textarea id="import" rows="31" cols="40">ActiveBorder=244 193 202
-ActiveTitle=0 191 188
-AppWorkspace=255 184 182
-Background=162 219 210
-ButtonAlternateFace=181 181 181
-ButtonDkShadow=64 64 64
-ButtonFace=244 193 202
-ButtonHilight=250 224 228
-ButtonLight=247 219 215
-ButtonShadow=222 69 96
-ButtonText=0 0 0
-GradientActiveTitle=202 156 185
-GradientInactiveTitle=236 145 162
-GrayText=222 69 96
-Hilight=162 219 210
-HilightText=0 0 0
-HotTrackingColor=0 128 128
-InactiveBorder=244 193 202
-InactiveTitle=0 187 169
-InactiveTitleText=0 85 77
-InfoText=0 0 0
-InfoWindow=204 255 255
-Menu=244 193 202
-MenuBar=244 193 202
-MenuHilight=162 219 210
-MenuText=0 0 0
-Scrollbar=250 224 228
-TitleText=255 255 255
-Window=244 255 255
-WindowFrame=0 0 0
-WindowText=0 0 0</textarea>
-        <button id="import-action">Import</button>
-		<button onclick="WinClassicTheme.prototype.GetSystemColors();">Import from system colors (not quite working yet)</button>
-      </fieldset>
-    </div>
-  </main>
-
-  <footer>
-    <hr>
-
-    <p>Originally created by <a href="http://tpenguinltg.wordpress.com/">tPenguinLTG</a>. View their source on <a href="https://github.com/tpenguinltg/winclassic">GitHub</a>.</p>
-    <p>Enhanced by <a href="http://codepen.io/Aoz0ra/">Aoz0ra</a>.</p>
-  </footer>
-
-  <script> makeSvgInline(); </script>
-	
 
 
-</div>
-</body></html>
+
+		<div class="page">
+
+
+			<div class="row">
+				<div id="customizer">
+					<!-- Preview area -->
+					<div id="preview" class="desktop" style="font-family: 'Tahoma', 'Deja Vu Sans', 'Bitstream Vera Sans', sans-serif !important;"
+							 class="col-xs-12 col-m-6 col-l-4 floating-toc-m">
+
+						<!-- Inactive window -->
+						<div id="window-inactive" class="window inactive">
+							<div class="titlebar">
+								<span class="titlebar-title">Inactive Window</span>
+								<div class="titlebar-wincontrols">
+									<ul class="buttons-wrapper">
+										<li class="button minimize"><svg style="margin-top: 2px;" xmlns="http://www.w3.org/2000/svg" width="0.125017in" height="0.104181in" viewBox="0 0 12 10" class="button-content replaced-svg">
+											<path id="Minimize" fill="black" stroke="black" stroke-width="0" d="M 2.00,7.00            C 2.00,7.00 8.00,7.00 8.00,7.00              8.00,7.00 8.00,9.00 8.00,9.00              8.00,9.00 2.00,9.00 2.00,9.00              2.00,9.00 2.00,7.00 2.00,7.00 Z"></path>
+											</svg></li><li class="button maximize"><svg style="margin-top: 2px;" xmlns="http://www.w3.org/2000/svg" width="0.125017in" height="0.104181in" viewBox="0 0 12 10" class="button-content replaced-svg">
+										<path id="Maximize" fill="black" stroke="black" stroke-width="0" d="M 2.00,2.00            C 2.00,2.00 9.00,2.00 9.00,2.00              9.00,2.00 9.00,8.00 9.00,8.00              9.00,8.00 2.00,8.00 2.00,8.00              2.00,8.00 2.00,2.00 2.00,2.00 Z            M 1.00,0.00            C 1.00,0.00 1.00,9.00 1.00,9.00              1.00,9.00 10.00,9.00 10.00,9.00              10.00,9.00 10.00,0.00 10.00,0.00              10.00,0.00 1.00,0.00 1.00,0.00 Z"></path>
+										</svg></li><li class="spacer"></li><li class="button close"><svg style="margin-top: 2px;" svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.1" width="12" height="10" class="button-content replaced-svg">
+										<g transform="translate(0,-1042.3622)" id="layer1">
+											<path d="m 2.0025485,1043.3853 2.0198115,0 0,1.0185 0.984011,0 0,0.984 1.985286,0 0,-0.984 1.001274,0 0,-1.0185 2.002548,0 0,1.0013 0,0 0,0 -1.001274,0 0,1.0012 -1.001274,0 0,0.9841 -1.001274,0 0,1.0012 1.001274,0 0,1.0013 1.001274,0 0,1.0013 1.001274,0 0,1.0013 -2.002548,0 0,-1.0013 -1.001274,0 0,-0.984 -1.985286,0 0,0.984 -1.001274,0 0,1.0013 -2.0025485,0 0,-1.0013 1.0012745,0 0,-1.0013 1.001274,0 0,-1.0013 1.001274,0 0,-1.0012 -1.001274,0 0,-0.9841 -1.001274,0 0,-1.0012 -1.0012745,0 0,-1.0186 z" id="Close" fill="black" stroke-width="0"></path>
+										</g>
+										</svg></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+
+						<!-- Active window -->
+						<div id="window-active" class="window active">
+							<!-- Titlebar -->
+							<div class="titlebar">
+								<span class="titlebar-title">Active Window</span>
+								<div class="titlebar-wincontrols">
+									<ul class="buttons-wrapper">
+										<li class="button minimize"><svg style="margin-top: 2px;" xmlns="http://www.w3.org/2000/svg" width="0.125017in" height="0.104181in" viewBox="0 0 12 10" class="button-content replaced-svg">
+											<path id="Minimize" fill="black" stroke="black" stroke-width="0" d="M 2.00,7.00            C 2.00,7.00 8.00,7.00 8.00,7.00              8.00,7.00 8.00,9.00 8.00,9.00              8.00,9.00 2.00,9.00 2.00,9.00              2.00,9.00 2.00,7.00 2.00,7.00 Z"></path>
+											</svg></li><li class="button maximize"><svg style="margin-top: 2px;" xmlns="http://www.w3.org/2000/svg" width="0.125017in" height="0.104181in" viewBox="0 0 12 10" class="button-content replaced-svg">
+										<path id="Maximize" fill="black" stroke="black" stroke-width="0" d="M 2.00,2.00            C 2.00,2.00 9.00,2.00 9.00,2.00              9.00,2.00 9.00,8.00 9.00,8.00              9.00,8.00 2.00,8.00 2.00,8.00              2.00,8.00 2.00,2.00 2.00,2.00 Z            M 1.00,0.00            C 1.00,0.00 1.00,9.00 1.00,9.00              1.00,9.00 10.00,9.00 10.00,9.00              10.00,9.00 10.00,0.00 10.00,0.00              10.00,0.00 1.00,0.00 1.00,0.00 Z"></path>
+										</svg></li><li class="spacer"></li><li class="button close"><svg style="margin-top: 2px;" svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.1" width="12" height="10" class="button-content replaced-svg">
+										<g transform="translate(0,-1042.3622)" id="layer1">
+											<path d="m 2.0025485,1043.3853 2.0198115,0 0,1.0185 0.984011,0 0,0.984 1.985286,0 0,-0.984 1.001274,0 0,-1.0185 2.002548,0 0,1.0013 0,0 0,0 -1.001274,0 0,1.0012 -1.001274,0 0,0.9841 -1.001274,0 0,1.0012 1.001274,0 0,1.0013 1.001274,0 0,1.0013 1.001274,0 0,1.0013 -2.002548,0 0,-1.0013 -1.001274,0 0,-0.984 -1.985286,0 0,0.984 -1.001274,0 0,1.0013 -2.0025485,0 0,-1.0013 1.0012745,0 0,-1.0013 1.001274,0 0,-1.0013 1.001274,0 0,-1.0012 -1.001274,0 0,-0.9841 -1.001274,0 0,-1.0012 -1.0012745,0 0,-1.0186 z" id="Close" fill="black" stroke-width="0"></path>
+										</g>
+										</svg></li>
+									</ul>
+								</div>
+							</div>
+
+							<div class="window-content">
+								<!-- Menu bar -->
+								<ul class="menubar">
+									<li>Normal</li>
+									<li class="disabled">Disabled</li>
+									<li class="selected">Selected</li>
+								</ul>
+
+								<!-- Content -->
+								<div class="window-area">
+									<div class="scroll-pane" id="active-scroll-pane">
+										<div class="scroll-pane-wrapper">
+											<div class="text-pane scroll-pane-content" id="active-textarea">
+												<p style="font-weight: bold;">Window Text</p>
+											</div>
+
+											<!-- Scroll bar -->
+											<div class="scrollbar verti-scroll"><div class="scrollbar-flex"><div class="button scroll-up"><svg style="margin-top: 2px;" xmlns="http://www.w3.org/2000/svg" width="0.114599in" height="0.114599in" viewBox="0 0 11 11" class="button-content replaced-svg">
+												<path id="Up" fill="black" stroke="none" stroke-width="0" d="M 2.00,8.00            C 2.00,8.00 2.00,7.00 2.00,7.00              2.00,7.00 3.00,7.00 3.00,7.00              3.00,7.00 3.00,6.00 3.00,6.00              3.00,6.00 4.00,6.00 4.00,6.00              4.00,6.00 4.00,5.00 4.00,5.00              4.00,5.00 5.00,5.00 5.00,5.00              5.00,5.00 5.00,4.00 5.00,4.00              5.00,4.00 6.00,4.00 6.00,4.00              6.00,4.00 6.00,5.00 6.00,5.00              6.00,5.00 7.00,5.00 7.00,5.00              7.00,5.00 7.00,6.00 7.00,6.00              7.00,6.00 8.00,6.00 8.00,6.00              8.00,6.00 8.00,7.00 8.00,7.00              8.00,7.00 9.00,7.00 9.00,7.00              9.00,7.00 9.00,8.00 9.00,8.00              9.00,8.00 2.00,8.00 2.00,8.00 Z"></path>
+												</svg></div><div class="scroll-track"></div><div class="button scroll-down"><svg style="margin-top: 2px;" xmlns="http://www.w3.org/2000/svg" width="0.114599in" height="0.114599in" viewBox="0 0 11 11" class="button-content replaced-svg">
+												<path id="Down" fill="black" stroke="none" stroke-width="0" d="M 2.00,4.00            C 2.00,4.00 9.00,4.00 9.00,4.00              9.00,4.00 9.00,5.00 9.00,5.00              9.00,5.00 8.00,5.00 8.00,5.00              8.00,5.00 8.00,6.00 8.00,6.00              8.00,6.00 7.00,6.00 7.00,6.00              7.00,6.00 7.00,7.00 7.00,7.00              7.00,7.00 6.00,7.00 6.00,7.00              6.00,7.00 6.00,8.00 6.00,8.00              6.00,8.00 5.00,8.00 5.00,8.00              5.00,8.00 5.00,7.00 5.00,7.00              5.00,7.00 4.00,7.00 4.00,7.00              4.00,7.00 4.00,6.00 4.00,6.00              4.00,6.00 3.00,6.00 3.00,6.00              3.00,6.00 3.00,5.00 3.00,5.00              3.00,5.00 2.00,5.00 2.00,5.00              2.00,5.00 2.00,4.00 2.00,4.00 Z"></path>
+												</svg></div></div></div>
+											<div class="scrollbar horiz-scroll hidden"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- Dialog -->
+						<div id="window-dialog" class="window modal active">
+							<!-- Titlebar -->
+							<div class="titlebar">
+								<span class="titlebar-title">Message Box</span>
+								<div class="titlebar-wincontrols">
+									<ul class="buttons-wrapper">
+										<li class="button close"><svg style="margin-top: 2px;" svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.1" width="12" height="10" class="button-content replaced-svg">
+											<g transform="translate(0,-1042.3622)" id="layer1">
+												<path d="m 2.0025485,1043.3853 2.0198115,0 0,1.0185 0.984011,0 0,0.984 1.985286,0 0,-0.984 1.001274,0 0,-1.0185 2.002548,0 0,1.0013 0,0 0,0 -1.001274,0 0,1.0012 -1.001274,0 0,0.9841 -1.001274,0 0,1.0012 1.001274,0 0,1.0013 1.001274,0 0,1.0013 1.001274,0 0,1.0013 -2.002548,0 0,-1.0013 -1.001274,0 0,-0.984 -1.985286,0 0,0.984 -1.001274,0 0,1.0013 -2.0025485,0 0,-1.0013 1.0012745,0 0,-1.0013 1.001274,0 0,-1.0013 1.001274,0 0,-1.0012 -1.001274,0 0,-0.9841 -1.001274,0 0,-1.0012 -1.0012745,0 0,-1.0186 z" id="Close" fill="black" stroke-width="0"></path>
+											</g>
+											</svg></li>
+									</ul>
+								</div>
+							</div>
+
+							<!-- Message -->
+							<div class="window-content">
+								<div class="modal-content">Message Text <a href="" style="color: var(--HotTrackingColor)">Reload/reset</a></div>
+								<div class="modal-controls">
+									<ul class="buttons-wrapper">
+										<li class="button ok"><span class="button-content">OK</span></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						
+						<p class="block">Windows 10: [incomplete preview]</p>
+						<span style="color: var(--ButtonText); background: var(--ButtonFace); border: 2px var(--Hilight) solid; height: 20px; font-family: 'Segoe UI', 'Webly Sleek UI', 'Open Sans', sans-serif; display: inline-block;">Button</span>
+						<br/>
+						<div class="block"></div>
+					</div>
+
+
+					
+
+
+
+
+
+
+
+
+
+					<div id="controls" class="col-xs-12 col-m-6 col-l-9>
+						<div id="meta-controls">
+							<label><input type="checkbox" name="link-elements" id="link-elements" checked="checked"> Link elements</label>
+						</div>
+						<fieldset>
+							<legend>Buttons</legend>
+							<label><input type="color" name="ButtonAlternateFace" id="ButtonAlternateFace" class="color-item" data-item="ButtonAlternateFace" value="#b5b5b5"> ButtonAlternateFace [unused]</label>
+							<label><input type="color" name="ButtonDkShadow" id="ButtonDkShadow" class="color-item" data-item="ButtonDkShadow" value="#404040"> ButtonDkShadow</label>
+							<label><input type="color" name="ButtonFace" id="ButtonFace" class="color-item" data-item="ButtonFace" value="#f4c1ca"> ButtonFace</label>
+							<label><input type="color" name="ButtonHilight" id="ButtonHilight" class="color-item" data-item="ButtonHilight" value="#fae0e4"> ButtonHilight</label>
+							<label><input type="color" name="ButtonLight" id="ButtonLight" class="color-item" data-item="ButtonLight" value="#f7dbd7"> ButtonLight</label>
+							<label><input type="color" name="ButtonShadow" id="ButtonShadow" class="color-item" data-item="ButtonShadow" value="#de4560"> ButtonShadow</label>
+							<label><input type="color" name="ButtonText" id="ButtonText" class="color-item" data-item="ButtonText" value="#000000"> ButtonText</label>
+						</fieldset>
+						<fieldset>
+							<legend>Windows</legend>
+							<label><input type="color" name="ActiveBorder" id="ActiveBorder" class="color-item" data-item="ActiveBorder" value="#f4c1ca"> ActiveBorder</label>
+							<label><input type="color" name="AppWorkspace" id="AppWorkspace" class="color-item" data-item="AppWorkspace" value="#de4560"> AppWorkspace</label>
+							<label><input type="color" name="Background" id="Background" class="color-item" data-item="Background" value="#a2dbd2"> Background</label>
+							<label><input type="color" name="InactiveBorder" id="InactiveBorder" class="color-item" data-item="InactiveBorder" value="#f4c1ca"> InactiveBorder</label>
+							<label><input type="color" name="Scrollbar" id="Scrollbar" class="color-item" data-item="Scrollbar" value="#fae0e4"> Scrollbar</label>
+							<label><input type="color" name="Window" id="Window" class="color-item" data-item="Window" value="#f4ffff"> Window</label>
+							<label><input type="color" name="WindowFrame" id="WindowFrame" class="color-item" data-item="WindowFrame" value="#000000"> WindowFrame [rarely used]</label>
+							<label><input type="color" name="WindowText" id="WindowText" class="color-item" data-item="WindowText" value="#000000"> WindowText</label>
+						</fieldset>
+						<fieldset>
+							<legend>Titlebars</legend>
+							<label><input type="color" name="ActiveTitle" id="ActiveTitle" class="color-item" data-item="ActiveTitle" value="#00bfbc"> ActiveTitle</label>
+							<label><input type="color" name="GradientActiveTitle" id="GradientActiveTitle" class="color-item" data-item="GradientActiveTitle" value="#ca9cb9"> GradientActiveTitle</label>
+							<label><input type="color" name="GradientInactiveTitle" id="GradientInactiveTitle" class="color-item" data-item="GradientInactiveTitle" value="#ec91a2"> GradientInactiveTitle</label>
+							<label><input type="color" name="InactiveTitle" id="InactiveTitle" class="color-item" data-item="InactiveTitle" value="#00bba9"> InactiveTitle</label>
+							<label><input type="color" name="InactiveTitleText" id="InactiveTitleText" class="color-item" data-item="InactiveTitleText" value="#00554d"> InactiveTitleText</label>
+							<label><input type="color" name="TitleText" id="TitleText" class="color-item" data-item="TitleText" value="#ffffff"> TitleText</label>
+						</fieldset>
+						<fieldset>
+							<legend>Menus</legend>
+							<label><input type="color" name="Menu" id="Menu" class="color-item" data-item="Menu" value="#f4c1ca"> Menu</label>
+							<label><input type="color" name="MenuBar" id="MenuBar" class="color-item" data-item="MenuBar" value="#f4c1ca"> MenuBar</label>
+							<label><input type="color" name="MenuHilight" id="MenuHilight" class="color-item" data-item="MenuHilight" value="#a2dbd2"> MenuHilight [unused]</label>
+							<label><input type="color" name="MenuText" id="MenuText" class="color-item" data-item="MenuText" value="#000000"> MenuText [unused]</label>
+						</fieldset>
+						<fieldset>
+							<legend>Text</legend>
+							<label><input type="color" name="GrayText" id="GrayText" class="color-item" data-item="GrayText" value="#de4560"> GrayText</label>
+							<label><input type="color" name="Hilight" id="Hilight" class="color-item" data-item="Hilight" value="#a2dbd2"> Hilight</label>
+							<label><input type="color" name="HilightText" id="HilightText" class="color-item" data-item="HilightText" value="#000000"> HilightText</label>
+							<label><input type="color" name="HotTrackingColor" id="HotTrackingColor" class="color-item" data-item="HotTrackingColor" value="#008080"> HotTrackingColor</label>
+						</fieldset>
+						<fieldset>
+							<legend>Tooltips</legend>
+							<label><input type="color" name="InfoText" id="InfoText" class="color-item" data-item="InfoText" value="#000000"> InfoText</label>
+							<label><input type="color" name="InfoWindow" id="InfoWindow" class="color-item" data-item="InfoWindow" value="#ccffff"> InfoWindow</label>
+						</fieldset>
+					</div>
+				</div>
+			</div>
+
+			<hr>
+
+			<div id="ini-code">
+				<h2><code>[Control Panel\Colors]</code></h2>
+
+				<div class="col-xs-12 col-l-6">
+					<fieldset>
+						<legend>Export</legend>
+						<textarea id="export" rows="31" cols="40" readonly="readonly">ButtonAlternateFace=181 181 181
+							ButtonDkShadow=64 64 64
+							ButtonFace=244 193 202
+							ButtonHilight=250 224 228
+							ButtonLight=247 219 215
+							ButtonShadow=222 69 96
+							ButtonText=0 0 0
+							ActiveBorder=244 193 202
+							AppWorkspace=222 69 96
+							Background=162 219 210
+							InactiveBorder=244 193 202
+							Scrollbar=250 224 228
+							Window=244 255 255
+							WindowFrame=0 0 0
+							WindowText=0 0 0
+							ActiveTitle=0 191 188
+							GradientActiveTitle=202 156 185
+							GradientInactiveTitle=236 145 162
+							InactiveTitle=0 187 169
+							InactiveTitleText=0 85 77
+							TitleText=255 255 255
+							Menu=244 193 202
+							MenuBar=244 193 202
+							MenuHilight=162 219 210
+							MenuText=0 0 0
+							GrayText=222 69 96
+							Hilight=162 219 210
+							HilightText=0 0 0
+							HotTrackingColor=0 128 128
+							InfoText=0 0 0
+							InfoWindow=204 255 255</textarea>
+						<input type="text" id="themeName" value="My New Theme"/>
+						<input type="text" id="themeComment" value="your comment here"/>
+						
+						<button onclick="
+														 createTheme(`${document.getElementById('themeName').value}.theme`, document.getElementById('export').value, document.getElementById('themeComment').value)
+														 ">Export</button>
+					</fieldset>
+				</div>
+				
+				<div class="col-xs-12 col-l-6">
+					<fieldset>
+						<legend>Import</legend>
+						<textarea id="import" rows="31" cols="40">ActiveBorder=244 193 202
+							ActiveTitle=0 191 188
+							AppWorkspace=255 184 182
+							Background=162 219 210
+							ButtonAlternateFace=181 181 181
+							ButtonDkShadow=64 64 64
+							ButtonFace=244 193 202
+							ButtonHilight=250 224 228
+							ButtonLight=247 219 215
+							ButtonShadow=222 69 96
+							ButtonText=0 0 0
+							GradientActiveTitle=202 156 185
+							GradientInactiveTitle=236 145 162
+							GrayText=222 69 96
+							Hilight=162 219 210
+							HilightText=0 0 0
+							HotTrackingColor=0 128 128
+							InactiveBorder=244 193 202
+							InactiveTitle=0 187 169
+							InactiveTitleText=0 85 77
+							InfoText=0 0 0
+							InfoWindow=204 255 255
+							Menu=244 193 202
+							MenuBar=244 193 202
+							MenuHilight=162 219 210
+							MenuText=0 0 0
+							Scrollbar=250 224 228
+							TitleText=255 255 255
+							Window=244 255 255
+							WindowFrame=0 0 0
+							WindowText=0 0 0</textarea>
+						<button id="import-action">Import</button>
+						<button onclick="winclassic.GetSystemColors();">Import from system colors — This doesn't work yet</button>
+					</fieldset>
+				</div>
+			</div>
+
+			<footer>
+				<hr>
+
+				<p>Originally created by <a href="http://tpenguinltg.wordpress.com/">tPenguinLTG</a>. View their source on <a href="https://github.com/tpenguinltg/winclassic">GitHub</a>.</p>
+				<p>Enhanced by <a href="http://codepen.io/Aoz0ra/">Aoz0ra</a>.</p>
+			</footer>
+
+			<script> makeSvgInline(); </script>
+
+
+
+		</div>
+	</body>
+
+</html>
+
+
+

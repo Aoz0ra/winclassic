@@ -4,7 +4,7 @@
 
 /* Dimensions */
 #preview {
-  width: 411px;
+  width: 341px;
   height: 219px;
   margin: 0em 1em 1em;
   border-style: inset;
@@ -13,21 +13,21 @@
 }
 
 #window-inactive {
-  width: 371px;
+  width: 261px;
   height: 175px;
   top: 10px;
   left: 10px;
 }
 
 #window-active {
-  width: 389px;
+  width: 279px;
   height: 157px;
   top: 33px;
   left: 14px;
 }
 
 #window-dialog {
-  width: 239px;
+  width: 169px;
   height: 80px;
   left: 22px;
   top: 133px;

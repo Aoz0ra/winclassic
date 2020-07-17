@@ -1,6 +1,21 @@
+/* Original licence: */
 /* This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
- * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+ * file, you can obtain one at http://mozilla.org/MPL/2.0/. */
+
+html {
+	background: var(--Window);
+	color: var(--WindowText);
+}
+
+div.preview {
+font-family: 'Tahoma', sans-serif;
+}
+
+::selection, ::-moz-selection {
+	background: var(--Hilight, #000);
+	color: var(--HilightText, #fff);
+}
 
 #customizer {
   display: flex;

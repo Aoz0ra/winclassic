@@ -4,6 +4,7 @@
 
 .desktop {
   overflow: hidden;
+  all: unset;
 }
 
 .window {

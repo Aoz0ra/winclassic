@@ -90,7 +90,7 @@ div.drop-content div.item {
 
 div.item:hover {
 	--background: var(--Hilight) !important;
-  --foreground: var(--HilightText) !important;
+	--foreground: var(--HilightText) !important;
 }
 
 
@@ -98,7 +98,7 @@ div.item:hover {
 
 
 div.header {
-	--foreground: var(--ActiveTitleText);
+	color: var(--ActiveTitleText);
 	
 	padding: var(--headerPaddingTop) var(--headerPaddingLeft) var(--headerPaddingBottom) var(--headerPaddingRight);
 	background: var(--ActiveTitle);

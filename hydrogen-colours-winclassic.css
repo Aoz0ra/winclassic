@@ -96,6 +96,18 @@ div.item:hover {
 
 
 
+
+div.header {
+	--foreground: var(--ActiveTitleText);
+	
+	padding: var(--headerPaddingTop) var(--headerPaddingLeft) var(--headerPaddingBottom) var(--headerPaddingRight);
+	background: var(--ActiveTitle);
+	background: linear-gradient(to right, var(--ActiveTitle) 0%, var(--GradientActiveTitle) 100%);
+}
+
+
+
+
 button:not(.nohydrogen) {
 	--background:              var(--ButtonFace);
 	--backgroundTop:           var(--ButtonFace);

@@ -52,8 +52,8 @@ div.navbar {
 	/* 	--backgroundBottom:  #e0e0e0; */
 
 	--background: var(--Menu);
-	--backgroundTop: var(--Menu;
-	--backgroundBottom: var(--Menu;
+	--backgroundTop: var(--Menu);
+	--backgroundBottom: var(--Menu);
 
 	--foreground: var(--WindowText);
 

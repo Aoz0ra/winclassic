@@ -1,5 +1,4 @@
-/* HYDROGEN DEFAULTS */
-/* The default colors and stuff */
+/* custom Hydrogen colours and styles */
 
 
 :root {
@@ -23,7 +22,8 @@
 	--borderBottom:        var(--ButtonDkShadow);
 
 
-  --borderRadius: 0px;
+	--borderRadius: 0px;
+	--borderWidth: 1px;
 
 
 	--hilight: var(--HotTrackingColor);
@@ -109,6 +109,8 @@ button:not(.nohydrogen) {
 	--borderBottom:        var(--ButtonDkShadow);
 
 	--decoration: #0000;
+	
+	box-shadow: 0 0 0 10px var(--decoration);
 }
 
 button:not(.nohydrogen):hover, button:not(.nohydrogen):focus {
@@ -124,6 +126,8 @@ button:not(.nohydrogen):hover, button:not(.nohydrogen):focus {
 	--borderBottom:        var(--ButtonDkShadow);
 
 	--decoration: var(--hilight);
+	
+	box-shadow: 0 0 0 1px var(--decoration);
 }
 
 button:not(.nohydrogen):active, button.active {

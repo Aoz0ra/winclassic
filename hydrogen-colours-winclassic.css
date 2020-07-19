@@ -98,7 +98,7 @@ div.item:hover {
 
 
 div.header {
-	color: var(--ActiveTitleText);
+	--foreground: var(--TitleText);
 	
 	padding: var(--headerPaddingTop) var(--headerPaddingLeft) var(--headerPaddingBottom) var(--headerPaddingRight);
 	background: var(--ActiveTitle);

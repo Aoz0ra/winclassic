@@ -7,7 +7,7 @@
 	*******************/
 
 	--background:        var(--Window);
-	--backgroundHilight: var(--Window);
+	--backgroundHilight: var(--ButtonAlternateFace);
 	--backgroundFaint:   var(--Window);
 
 	--foreground:        var(--WindowText);
@@ -43,6 +43,10 @@
 
 
 
+
+a:link, a:visited, a:hover, a:active {
+	--foreground: var(--HotTrackingColor)
+}
 
 /* NAVIGATION BAR */
 
@@ -98,13 +102,17 @@ div.item:hover {
 
 
 div.header {
-	color: var(--TitleText);
+	--foreground: var(--TitleText);
 	
 	padding: var(--headerPaddingTop) var(--headerPaddingLeft) var(--headerPaddingBottom) var(--headerPaddingRight);
 	background: var(--ActiveTitle);
 	background: linear-gradient(to right, var(--ActiveTitle) 0%, var(--GradientActiveTitle) 100%);
 }
 
+div.header h1 {
+	letter-spacing: none;
+	font-weight: bold;
+}
 
 
 
